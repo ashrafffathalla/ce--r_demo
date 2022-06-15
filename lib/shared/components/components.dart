@@ -1,6 +1,7 @@
 
 import 'dart:ffi';
 
+import 'package:center_app/shared/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -40,18 +41,21 @@ Widget defaultFormField(
       },
       validator: validate,
       decoration: InputDecoration(
+
+        enabledBorder:const UnderlineInputBorder(
+          borderSide: BorderSide(color: btnColor),
+        ),
         labelText: label,
         labelStyle: TextStyle(
-          fontFamily: 'Comfortaa',
-          fontWeight: FontWeight.w500,
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.w400,
           fontSize: 19.sp,
-          color: Colors.black45,
+          color: kPrimaryColor,
         ),
         contentPadding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * 0.03,
           vertical: MediaQuery.of(context).size.height * 0.02,
         ),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
       ),
     );
 
