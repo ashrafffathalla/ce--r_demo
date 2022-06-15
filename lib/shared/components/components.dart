@@ -41,20 +41,19 @@ Widget defaultFormField(
       },
       validator: validate,
       decoration: InputDecoration(
-
         enabledBorder:const UnderlineInputBorder(
-          borderSide: BorderSide(color: btnColor),
+          borderSide: BorderSide(color: btnColor,),
         ),
         labelText: label,
         labelStyle: TextStyle(
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w400,
-          fontSize: 19.sp,
-          color: kPrimaryColor,
+          fontSize: 16.sp,
+          color: kPrimaryColorForm,
         ),
         contentPadding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * 0.03,
-          vertical: MediaQuery.of(context).size.height * 0.02,
+          vertical: MediaQuery.of(context).size.height * 0.01,
         ),
       ),
     );
@@ -64,13 +63,13 @@ Widget defaultFormField(
 Widget defaultButton(
     BuildContext context, {
       double width = double.infinity,
-      Color background = Colors.brown,
+      required Color background,
       required VoidCallback function,
       required String text,
       required BorderRadius rounder,
     }) =>
     Container(
-      height: MediaQuery.of(context).size.height * 0.062,
+      height: MediaQuery.of(context).size.height * 0.065,
       decoration: BoxDecoration(
         borderRadius: rounder,
         color: background,
@@ -82,7 +81,7 @@ Widget defaultButton(
           text.toUpperCase(),
           style: TextStyle(
             color: Colors.white,
-            fontFamily: 'Comfortaa',
+            fontFamily: 'Poppins',
             fontSize: 23.sp,
             fontWeight: FontWeight.w500,
           ),
