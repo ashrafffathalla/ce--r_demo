@@ -107,7 +107,7 @@ class SignUpScreen extends StatelessWidget {
                       text: 'Sign Up',
                       rounder: BorderRadius.circular(8),
                       width: size.width * 0.75,
-                  )
+                  ),
                 ],
               ),
             ),

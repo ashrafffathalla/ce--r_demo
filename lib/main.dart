@@ -1,7 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:center_app/modules/login/login_screen.dart';
+import 'package:center_app/modules/reset_password/reset_password_screen.dart';
 import 'package:center_app/modules/select_gaverment/select_gaverment_screen.dart';
 import 'package:center_app/modules/signup/signup_screen.dart';
+import 'package:center_app/modules/students_module/category/category_screen.dart';
 import 'package:center_app/shared/blocobserver.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -44,7 +46,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
 
             ),
-            home: const VerificationScreen(),
+            home: const CategoryScreen(),
           );
         }
     );

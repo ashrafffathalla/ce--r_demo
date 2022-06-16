@@ -11,7 +11,7 @@ Widget splashSizeBoxStart(context) => SizedBox(
 );
 ///Start default Size Box
 Widget defaultSizeBoxStart(context) => SizedBox(
-  height: MediaQuery.of(context).size.height * 0.05,
+  height: MediaQuery.of(context).size.height * 0.06,
 );
 
 ///End Standard Size Box
@@ -37,7 +37,7 @@ Widget defaultFormField(
       enabled: isClickable,
       onTap: onTab,
       onFieldSubmitted: (String value) {
-        print(value);
+        //print(value);
       },
       validator: validate,
       decoration: InputDecoration(
@@ -78,7 +78,7 @@ Widget defaultButton(
       child: MaterialButton(
         onPressed: function,
         child: Text(
-          text.toUpperCase(),
+          text,
           style: TextStyle(
             color: Colors.white,
             fontFamily: 'Poppins',
