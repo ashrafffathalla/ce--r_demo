@@ -8,7 +8,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var emailController = TextEditingController();
+    var mobileNumberController = TextEditingController();
     var passwordController = TextEditingController();
     Size size = MediaQuery.of(context).size;
     return GestureDetector(
@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   defaultFormField(
                     context,
-                    controller: emailController,
+                    controller: mobileNumberController,
                     type: TextInputType.number,
                     validate: (value) {
                       if (value!.isEmpty) {

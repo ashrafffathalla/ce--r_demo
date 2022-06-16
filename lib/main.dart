@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:center_app/modules/login/login_screen.dart';
 import 'package:center_app/modules/select_gaverment/select_gaverment_screen.dart';
+import 'package:center_app/modules/signup/signup_screen.dart';
 import 'package:center_app/shared/blocobserver.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'modules/Splash_screen/splash_screen.dart';
 import 'modules/login_as/login_as_screen.dart';
+import 'modules/verification/verification_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,7 +44,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
 
             ),
-            home: const LoginScreen(),
+            home: const VerificationScreen(),
           );
         }
     );
