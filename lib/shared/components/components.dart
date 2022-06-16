@@ -156,3 +156,26 @@ Widget textWidget({
     color: color,
   ),
 );
+///Custom AppBar
+Widget customAppBar(size,text)=>Row(
+  children: [
+    SizedBox(
+      width: size.width * 0.05,
+    ),
+    const Icon(
+      Icons.arrow_back,
+      size: 25,
+    ),
+    SizedBox(
+      width: size.width / 4.5,
+    ),
+    Text(
+      text,
+      style: TextStyle(
+          color: Colors.black,
+          fontSize: 30.sp,
+          fontWeight: FontWeight.w400,
+          fontFamily: 'Poppins'),
+    )
+  ],
+);

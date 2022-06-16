@@ -52,7 +52,6 @@ class CategoryScreen extends StatelessWidget {
                   )
                 ],
               ),
-
               /// After APP BAR
               SizedBox(
                 height: size.height * 0.05,
@@ -113,7 +112,7 @@ class CategoryScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: size.height * 0.07,),
+                    SizedBox(height: size.height * 0.05,),
                     ListView.separated(
                         physics: const BouncingScrollPhysics(),
                         padding: const EdgeInsets.all(0),
@@ -123,8 +122,9 @@ class CategoryScreen extends StatelessWidget {
                             buildCategoryCard(size),
                         separatorBuilder: (context, index) =>
                             SizedBox(height: size.height * 0.02,),
-                        itemCount: 5
+                        itemCount: 5,
                     ),
+                    SizedBox(height: size.height * 0.05,),
                   ],
                 ),
               )
