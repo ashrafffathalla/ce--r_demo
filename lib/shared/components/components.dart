@@ -182,6 +182,6 @@ Widget customAppBar(size, text) => Row(
               fontSize: 30.sp,
               fontWeight: FontWeight.w400,
               fontFamily: 'Poppins'),
-        )
+        ),
       ],
     );
