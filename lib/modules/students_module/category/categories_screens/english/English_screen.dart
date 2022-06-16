@@ -1,10 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:center_app/shared/components/components.dart';
 import 'package:center_app/shared/style/colors.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-class FrenchScreen extends StatelessWidget {
-  const FrenchScreen({Key? key}) : super(key: key);
+class EnglishScreen extends StatelessWidget {
+  const EnglishScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class FrenchScreen extends StatelessWidget {
         child:Column(
           children: [
             defaultSizeBoxStart(context),
-            customAppBar(size,'French'),
+            customAppBar(size,'English'),
             SizedBox(
               height: size.height*0.05,
             ),
@@ -40,11 +39,11 @@ class FrenchScreen extends StatelessWidget {
                     Image.asset('assets/images/category.png',fit: BoxFit.cover,),
                     SizedBox(height: size.height*0.02,),
                     textWidget(
-                        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
-                        fontFamily: 'Poppins',
-                        fontSize: 12.sp,
-                        color:const Color(0XFF707070),
-                        fontWeight: FontWeight.w400,
+                      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+                      fontFamily: 'Poppins',
+                      fontSize: 12.sp,
+                      color:const Color(0XFF707070),
+                      fontWeight: FontWeight.w400,
                     ),
                     textWidget(
                       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
@@ -99,7 +98,7 @@ class FrenchScreen extends StatelessWidget {
               ),
             ),
           ],
-          ) ,
+        ) ,
       ),
     );
   }
