@@ -6,13 +6,13 @@ import '../../../../shared/widget/search_widget/search_screen.dart';
 
 class SearchCenterScreen extends StatelessWidget {
   const SearchCenterScreen({Key? key}) : super(key: key);
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: (){},
         child: Icon(
           Icons.whatsapp,
           size: 35.sp,
@@ -57,7 +57,8 @@ class SearchCenterScreen extends StatelessWidget {
             ),
           ],
         ),
-      )),
+      ),
+      ),
     );
   }
 
