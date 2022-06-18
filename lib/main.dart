@@ -9,6 +9,7 @@ import 'package:center_app/modules/students_module/category/categories_screens/f
 import 'package:center_app/modules/students_module/category/categories_screens/math/math_screen.dart';
 import 'package:center_app/modules/students_module/category/categories_screens/scince/scince_screen/scince_screen.dart';
 import 'package:center_app/modules/students_module/category/category_screen.dart';
+import 'package:center_app/modules/students_module/search_course/search_course_screen.dart';
 import 'package:center_app/shared/blocobserver.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: ThemeData(),
-            home: const CategoryScreen(),
+            home: const SearchCourseScreen(),
           );
         });
   }
