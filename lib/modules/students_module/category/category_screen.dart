@@ -1,4 +1,5 @@
 import 'package:center_app/shared/components/components.dart';
+import 'package:center_app/shared/widget/search_widget/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,9 +12,7 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var searchController = TextEditingController();
-    Size size = MediaQuery
-        .of(context)
-        .size;
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -52,6 +51,7 @@ class CategoryScreen extends StatelessWidget {
                   )
                 ],
               ),
+
               /// After APP BAR
               SizedBox(
                 height: size.height * 0.05,
@@ -60,71 +60,24 @@ class CategoryScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
                 child: Column(
                   children: [
-                    Container(
-                      width: size.width,
-                      height: size.height * 0.06,
-                      decoration: BoxDecoration(
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Color(0xff909090),
-                            blurRadius: 5.0, // soften the shadow
-                            offset: Offset(
-                              0.0, // Move to right 10  horizontally
-                              .01, // Move to bottom 10 Vertically
-                            ),
-                          ),
-
-                        ],
-                        color: const Color(0xFFF5F5F5),
-                        borderRadius: BorderRadius.circular(7),
-                      ),
-                      child: TextFormField(
-                        controller: searchController,
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          focusedBorder: InputBorder.none,
-                          enabledBorder: InputBorder.none,
-                          disabledBorder: InputBorder.none,
-                          focusColor: Colors.transparent,
-                          labelText: 'Search',
-                          labelStyle: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w400,
-                            fontSize: 16.sp,
-                            color: Colors.grey,
-                          ),
-                          prefixIcon: Icon(
-                            Icons.search_sharp,
-                            size: 25.sp,
-                            color: Colors.grey[400],
-                          ),
-                          contentPadding: EdgeInsets.symmetric(
-                            horizontal: MediaQuery
-                                .of(context)
-                                .size
-                                .width * 0.03,
-                            vertical: MediaQuery
-                                .of(context)
-                                .size
-                                .height * 0.01,
-                          ),
-                        ),
-                      ),
+                    const SearchScreen(text: 'Search Category'),
+                    SizedBox(
+                      height: size.height * 0.05,
                     ),
-                    SizedBox(height: size.height * 0.05,),
                     ListView.separated(
-                        physics: const BouncingScrollPhysics(),
-                        padding: const EdgeInsets.all(0),
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
-                        itemBuilder: (context, index) =>
-                            buildCategoryCard(size),
-                        separatorBuilder: (context, index) =>
-                            SizedBox(height: size.height * 0.02,),
-                        itemCount: 5,
+                      physics: const BouncingScrollPhysics(),
+                      padding: const EdgeInsets.all(0),
+                      shrinkWrap: true,
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (context, index) => buildCategoryCard(size),
+                      separatorBuilder: (context, index) => SizedBox(
+                        height: size.height * 0.02,
+                      ),
+                      itemCount: 5,
                     ),
-                    SizedBox(height: size.height * 0.05,),
+                    SizedBox(
+                      height: size.height * 0.05,
+                    ),
                   ],
                 ),
               )
@@ -135,8 +88,7 @@ class CategoryScreen extends StatelessWidget {
     );
   }
 
-  Widget buildCategoryCard(size) =>
-      Container(
+  Widget buildCategoryCard(size) => Container(
         width: size.width,
         height: size.height * 0.12,
         decoration: BoxDecoration(
