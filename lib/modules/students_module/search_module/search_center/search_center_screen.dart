@@ -1,16 +1,25 @@
 import 'package:center_app/shared/components/components.dart';
-import 'package:center_app/shared/widget/search_widget/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../../../shared/widget/search_widget/search_screen.dart';
 
-class SearchCourseScreen extends StatelessWidget {
-  const SearchCourseScreen({Key? key}) : super(key: key);
+class SearchCenterScreen extends StatelessWidget {
+  const SearchCenterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(
+          Icons.whatsapp,
+          size: 35.sp,
+        ),
+        backgroundColor: Colors.green,
+        elevation: 0,
+      ),
       body: gradiantScaffoldColor(
           child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -25,7 +34,7 @@ class SearchCourseScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
               child: Column(
                 children: [
-                  const SearchScreen(text: 'Arabic Lesson'),
+                  const SearchScreen(text: 'Center Name'),
                   SizedBox(
                     height: size.height * 0.05,
                   ),
@@ -60,21 +69,19 @@ class SearchCourseScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         child: Padding(
-          padding: EdgeInsets.only(right: size.width*0.02),
+          padding: EdgeInsets.only(right: size.width * 0.02),
           child: Row(
             children: [
               SizedBox(
                 height: size.height * 0.12,
                 child: Image.asset(
-                  'assets/images/lesson.png',
+                  'assets/images/center.png',
                   fit: BoxFit.fitHeight,
                 ),
               ),
               Padding(
-                padding:  EdgeInsets.only(
-                    left: size.width*0.03,
-                  top: size.height*0.02
-                ),
+                padding: EdgeInsets.only(
+                    left: size.width * 0.03, top: size.height * 0.02),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -92,17 +99,15 @@ class SearchCourseScreen extends StatelessWidget {
                       color: Colors.black,
                       fontWeight: FontWeight.w400,
                     ),
-                    SvgPicture.asset('assets/icons/stars.svg')
+                    SvgPicture.asset('assets/icons/stars.svg'),
                   ],
                 ),
               ),
-               SvgPicture.asset('assets/icons/green_right_arrow.svg'),
               const Spacer(),
               Icon(
-                  Icons.arrow_forward,
-                size: 25.sp,
-
-              )
+                Icons.arrow_forward,
+                size: 23.sp,
+              ),
             ],
           ),
         ),
