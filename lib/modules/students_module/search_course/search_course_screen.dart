@@ -12,25 +12,41 @@ class SearchCourseScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: gradiantScaffoldColor(
-          child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: size.width * 0.05,
-        ),
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Column(
-            children: [
-              defaultSizeBoxStart(context),
-              customAppBar(size, 'Search'),
-              SizedBox(
-                height: size.height * 0.03,
+          child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            defaultSizeBoxStart(context),
+            customAppBar(size, 'Search'),
+            SizedBox(
+              height: size.height * 0.03,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
+              child: Column(
+                children: [
+                  const SearchScreen(text: 'Arabic Lesson'),
+                  SizedBox(
+                    height: size.height * 0.05,
+                  ),
+                  ListView.separated(
+                    physics: const BouncingScrollPhysics(),
+                    padding: const EdgeInsets.all(0),
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    itemBuilder: (context, index) => buildCategoryCard(size),
+                    separatorBuilder: (context, index) => SizedBox(
+                      height: size.height * 0.02,
+                    ),
+                    itemCount: 7,
+                  ),
+                ],
               ),
-              const SearchScreen(text: 'Arabic Lesson'),
-              SizedBox(
-                height: size.height * 0.03,
-              ),
-            ],
-          ),
+            ),
+            SizedBox(
+              height: size.height * 0.05,
+            ),
+          ],
         ),
       )),
     );
@@ -44,32 +60,49 @@ class SearchCourseScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: size.width * 0.02, vertical: size.height * 0.02),
+          padding: EdgeInsets.only(right: size.width*0.02),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  textWidget(
-                    text: 'French Course',
-                    fontFamily: 'Poppins',
-                    fontSize: 18.sp,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  textWidget(
-                    text: '60 Lesson',
-                    fontFamily: 'Poppins',
-                    fontSize: 13.sp,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  SvgPicture.asset('assets/icons/stars.svg')
-                ],
+              SizedBox(
+                height: size.height * 0.12,
+                child: Image.asset(
+                  'assets/images/lesson.png',
+                  fit: BoxFit.fitHeight,
+                ),
               ),
-              SvgPicture.asset('assets/icons/green_right_arrow.svg')
+              Padding(
+                padding:  EdgeInsets.only(
+                    left: size.width*0.03,
+                  top: size.height*0.02
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    textWidget(
+                      text: 'French Course',
+                      fontFamily: 'Poppins',
+                      fontSize: 18.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    textWidget(
+                      text: '60 Lesson',
+                      fontFamily: 'Poppins',
+                      fontSize: 13.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    SvgPicture.asset('assets/icons/stars.svg')
+                  ],
+                ),
+              ),
+               SvgPicture.asset('assets/icons/green_right_arrow.svg'),
+              const Spacer(),
+              Icon(
+                  Icons.arrow_forward,
+                size: 25.sp,
+
+              )
             ],
           ),
         ),
